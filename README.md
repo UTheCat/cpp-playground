@@ -2,7 +2,7 @@
 
 repository where i actually try to learn c++
 
-## Project setup
+## Project Setup
 
 **Build system:** CMake with Ninja
 
