@@ -10,7 +10,7 @@ int main(int, char**)
     bool should_exit = false;
     while (should_exit == false)
     {
-        printf("What would you like to do? (If you would like to exit the program, type 'exit'.)");
+        printf("What would you like to do? (If you would like to exit the program, type 'exit'.)\n");
         
         string action;
         cin >> action;
