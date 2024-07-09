@@ -3,6 +3,8 @@ project(cpp-stuff VERSION 0.1.0 LANGUAGES C CXX)
 
 add_executable(cpp-stuff main.cpp)
 
+target_include_directories(cpp-stuff PRIVATE src/main/console)
+
 include(CTest)
 enable_testing()
 
