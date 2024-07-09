@@ -13,7 +13,12 @@ namespace CppStuff
         public:
         string keyword;
         vector<string> aliases;
-
+        
+        /// @brief 
+        /// @param keyword 
+        /// @return Whether or not the given keyword is equal to this command's primary keyword or its aliases
+        bool has_keyword(string keyword);
+        
         void run();
         void print_aliases();
     };
