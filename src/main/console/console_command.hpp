@@ -15,10 +15,10 @@ namespace CppStuff
         vector<string> aliases;
         
         /// @brief 
-        /// @param keyword 
+        /// @param keyword_to_check 
         /// @return Whether or not the given keyword is equal to this command's primary keyword or its aliases
-        bool has_keyword(string keyword);
-        
+        bool has_keyword(string keyword_to_check);
+
         void run();
         void print_aliases();
     };
