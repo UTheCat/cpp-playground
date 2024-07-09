@@ -2,17 +2,18 @@
 
 #include "console_command.hpp"
 
-#ifndef EXIT_COMMAND_H
-#define EXIT_COMMAND_H
-
 using namespace std;
 using namespace CppStuff;
+
+#ifndef EXIT_COMMAND_H
+#define EXIT_COMMAND_H
 
 namespace CppStuff
 {
     class ExitCommand : public ConsoleCommand
     {
-
+        public:
+        ExitCommand();
     };
 }
 
