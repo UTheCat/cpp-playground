@@ -14,6 +14,8 @@ namespace CppStuff
     {
         public:
         ExitCommand();
+
+        void run() override;
     };
 }
 
