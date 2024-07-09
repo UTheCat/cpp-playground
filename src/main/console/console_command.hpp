@@ -19,7 +19,7 @@ namespace CppStuff
         /// @return Whether or not the given keyword is equal to this command's primary keyword or its aliases
         bool has_keyword(string keyword_to_check);
 
-        void run();
+        virtual void run();
         void print_aliases();
     };
 }
