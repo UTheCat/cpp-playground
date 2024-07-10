@@ -8,8 +8,6 @@ src/main/console/*.cpp
 
 add_executable(cpp-stuff main.cpp ${SOURCES})
 
-#target_include_directories(cpp-stuff PRIVATE src/main/console)
-
 include(CTest)
 enable_testing()
 
