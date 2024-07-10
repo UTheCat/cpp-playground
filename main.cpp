@@ -20,6 +20,7 @@ int main(int, char**)
 
         if (exit_command.has_keyword(action))
         {
+            exit_command.run();
             should_exit = true;
         }
     }
