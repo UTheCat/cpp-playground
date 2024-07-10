@@ -16,6 +16,8 @@ namespace CppStuff
         vector<ConsoleCommand> commands;
 
         void run_command(string keyword);
+
+        ConsoleCommandGroup();
     };
 }
 
