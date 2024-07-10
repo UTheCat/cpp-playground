@@ -4,6 +4,7 @@
 #include "src/main/console/exit_command.hpp"
 using namespace std;
 using namespace CppStuff;
+
 int main(int, char**)
 {
     printf("Hello, from cpp-stuff!\n");
