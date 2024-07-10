@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(cpp-stuff VERSION 0.1.0 LANGUAGES C CXX)
 
-add_executable(cpp-stuff main.cpp)
+file (GLOB SOURCES
+src/main/console/*.hpp
+src/main/console/*.cpp
+)
 
-target_include_directories(cpp-stuff PRIVATE src/main/console)
+add_executable(cpp-stuff main.cpp ${SOURCES})
+
+#target_include_directories(cpp-stuff PRIVATE src/main/console)
 
 include(CTest)
 enable_testing()
