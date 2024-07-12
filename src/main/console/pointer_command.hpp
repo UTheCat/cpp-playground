@@ -3,6 +3,9 @@
 using namespace std;
 using namespace CppStuff;
 
+#ifndef POINTER_COMMAND_H
+#define POINTER_COMMAND_H
+
 namespace CppStuff
 {
     class PointerCommand : public ConsoleCommand
@@ -12,3 +15,5 @@ namespace CppStuff
         PointerCommand();
     };
 }
+
+#endif // POINTER_COMMAND_H
