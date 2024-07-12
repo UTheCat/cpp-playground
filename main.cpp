@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <iostream>
+#include <vector>
 #include "src/main/console/console_command.hpp"
+#include "src/main/console/console_command_group.hpp"
 #include "src/main/console/exit_command.hpp"
+#include "src/main/console/pointer_command.hpp"
 using namespace std;
 using namespace CppStuff;
 
@@ -9,6 +12,10 @@ int main(int, char**)
 {
     printf("Hello, from cpp-stuff!\n");
     cout << "This is another message." << endl;
+
+    ConsoleCommandGroup command_group = ConsoleCommandGroup();
+    vector<ConsoleCommand> commands = command_group.commands;
+    commands.push_back(PointerCommand());
 
     bool should_exit = false;
     ExitCommand exit_command = ExitCommand();
@@ -23,6 +30,10 @@ int main(int, char**)
         {
             exit_command.run();
             should_exit = true;
+        }
+        else
+        {
+            command_group.run_command(action);
         }
     }
 
