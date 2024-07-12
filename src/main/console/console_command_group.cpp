@@ -4,10 +4,10 @@ void ConsoleCommandGroup::run_command(string keyword)
 {
     for (int i = 0; i < commands.size(); i++)
     {
-        ConsoleCommand command = commands[i];
-        if (command.has_keyword(keyword))
+        ConsoleCommand* command = commands[i];
+        if (command->has_keyword(keyword))
         {
-            command.run();
+            command->run();
             break;
         }
     }
@@ -15,5 +15,5 @@ void ConsoleCommandGroup::run_command(string keyword)
 
 ConsoleCommandGroup::ConsoleCommandGroup()
 {
-    commands = vector<ConsoleCommand>();
+    commands = vector<ConsoleCommand*>();
 }
