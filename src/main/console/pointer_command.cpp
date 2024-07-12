@@ -10,3 +10,9 @@ void PointerCommand::run()
     // Give memory back to the system (otherwise we'll end up with a memory leak)
     delete my_pointer;
 }
+
+PointerCommand::PointerCommand()
+{
+    keyword = "pointer";
+    aliases.push_back("do stuff with a pointer");
+}
