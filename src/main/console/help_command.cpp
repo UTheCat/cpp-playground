@@ -18,7 +18,7 @@ void HelpCommand::run()
         ConsoleCommand* command = commands->at(i);
         vector<string> aliases = command->aliases;
 
-        for (int i2 = 0; i2 < aliases.size(); i++)
+        for (int i2 = 0; i2 < aliases.size(); i2++)
         {
             aliases_output.append(aliases[i2]);
 
