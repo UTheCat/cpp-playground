@@ -11,7 +11,7 @@ namespace CppStuff
     class HelpCommand : public ConsoleCommand
     {
         public:
-        ConsoleCommandGroup group;
+        ConsoleCommandGroup* group;
 
         void run() override;
         HelpCommand();

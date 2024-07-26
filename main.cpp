@@ -21,7 +21,7 @@ int main(int, char**)
     commands->push_back(&pointer_command);
 
     HelpCommand help_command = HelpCommand();
-    help_command.group = command_group;
+    help_command.group = &command_group;
     commands->push_back(&help_command);
 
     bool should_exit = false;
