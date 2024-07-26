@@ -30,4 +30,6 @@ void HelpCommand::run()
 
         output.append(keyword).append("\t").append(aliases_output).append("\n");
     }
+
+    cout << output;
 }
