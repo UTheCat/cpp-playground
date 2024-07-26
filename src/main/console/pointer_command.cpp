@@ -19,6 +19,9 @@ void PointerCommand::run()
 
     // Store something at the memory address currently held by my_pointer
     *my_pointer = 38;
+    cout << "The value stored at the address stored by my_pointer is now ";
+    cout << to_string(arbitrary_number);
+    cout << "\n";
 }
 
 PointerCommand::PointerCommand()
