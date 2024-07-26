@@ -13,6 +13,7 @@ namespace CppStuff
         public:
         ConsoleCommandGroup group;
 
+        void run() override;
         HelpCommand();
     };
 }
