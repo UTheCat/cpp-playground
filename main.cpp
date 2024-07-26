@@ -4,6 +4,7 @@
 #include "src/main/console/console_command.hpp"
 #include "src/main/console/console_command_group.hpp"
 #include "src/main/console/exit_command.hpp"
+#include "src/main/console/help_command.hpp"
 #include "src/main/console/pointer_command.hpp"
 using namespace std;
 using namespace CppStuff;
@@ -18,6 +19,9 @@ int main(int, char**)
 
     PointerCommand pointer_command = PointerCommand();
     commands->push_back(&pointer_command);
+
+    HelpCommand help_command = HelpCommand();
+    commands->push_back(help_command);
 
     bool should_exit = false;
     ExitCommand exit_command = ExitCommand();

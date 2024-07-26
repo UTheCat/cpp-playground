@@ -8,7 +8,7 @@ using namespace std;
 
 namespace CppStuff
 {
-    class HelpCommand : ConsoleCommand
+    class HelpCommand : public ConsoleCommand
     {
         public:
         ConsoleCommandGroup group;
