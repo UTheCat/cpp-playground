@@ -6,6 +6,9 @@ src/main/console/*.hpp
 src/main/console/*.cpp
 )
 
+# Set C++ standard
+set_property(GLOBAL PROPERTY CXX_STANDARD 23)
+
 add_executable(cpp-stuff main.cpp ${SOURCES})
 
 include(CTest)

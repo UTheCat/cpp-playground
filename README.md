@@ -8,4 +8,6 @@ repository where i actually try to learn c++
 
 **Compiler:** G++ 13
 
+**C++ Standard:** C++23
+
 **IDE:** Visual Studio Code with the [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
