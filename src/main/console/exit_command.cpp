@@ -8,5 +8,5 @@ ExitCommand::ExitCommand()
 
 void ExitCommand::run()
 {
-    printf("Goodbye!");
+    printf("Goodbye!\n");
 }
