@@ -23,6 +23,9 @@ namespace CppStuff
          * 
          */
         LinkedListNode* next_item;
+
+        LinkedListNode();
+        LinkedListNode(double init_value, LinkedListNode* init_next_item);
     };
 }
 
