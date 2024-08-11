@@ -1,3 +1,4 @@
+using namespace CppStuff;
 
 #ifndef LINKED_LIST_NODE_H
 #define LINKED_LIST_NODE_H
