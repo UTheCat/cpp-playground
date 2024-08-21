@@ -7,7 +7,7 @@
 #include "src/main/console/help_command.hpp"
 #include "src/main/console/operator_overload_command.hpp"
 #include "src/main/console/pointer_command.hpp"
-#include "src/main/very_basic_vector2.hpp";
+#include "src/main/very_basic_vector2.hpp"
 
 using namespace std;
 using namespace CppStuff;
@@ -27,8 +27,10 @@ int main(int, char**)
     help_command.group = &command_group;
     commands->push_back(&help_command);
 
+    VeryBasicVector2 first_vec = VeryBasicVector2(3.5, 6.8);
+    VeryBasicVector2 second_vec = VeryBasicVector2(45.9, 17.2);
     OperatorOverloadCommand operator_overload_command = OperatorOverloadCommand(
-        &VeryBasicVector2(3.5, 6.8), &VeryBasicVector2(45.9, 17.2)
+        &first_vec, &second_vec
     );
     commands->push_back(&operator_overload_command);
 
