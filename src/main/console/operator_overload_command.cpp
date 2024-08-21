@@ -2,7 +2,7 @@
 
 using namespace CppStuff;
 
-OperatorOverloadCommand::OperatorOverloadCommand(VeryBasicVector2* first_vec, VeryBasicVector2* second_vec)
+OperatorOverloadCommand::OperatorOverloadCommand(VeryBasicVector2 *first_vec, VeryBasicVector2 *second_vec)
 {
     first_vector = first_vec;
     second_vector = second_vec;
@@ -18,7 +18,7 @@ void OperatorOverloadCommand::run()
     cout << ", ";
     cout << first_vector->y;
     cout << ").\nsecond_vector is set to (";
-    
+
     cout << second_vector->x;
     cout << ", ";
     cout << second_vector->y;
