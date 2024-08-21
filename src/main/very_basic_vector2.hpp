@@ -4,7 +4,7 @@
 namespace CppStuff
 {
     /**
-     * @brief A very basic Vector2, which stores two numbers named 'x' and 'y', and lets you do some operations with it.
+     * @brief A very basic implementation of Vector2, which conventionally stores two numbers named 'x' and 'y', and lets you do some operations with it.
      * 
      */
     class VeryBasicVector2
