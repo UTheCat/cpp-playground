@@ -43,6 +43,9 @@ int main(int, char**)
         string action;
         cin >> action;
 
+        // Insert newline so it's more clear which lines contain user input
+        cout << "\n";
+
         if (exit_command.has_keyword(action))
         {
             exit_command.run();
