@@ -6,6 +6,9 @@ OperatorOverloadCommand::OperatorOverloadCommand(VeryBasicVector2* first_vec, Ve
 {
     first_vector = first_vec;
     second_vector = second_vec;
+
+    keyword = "operator overload";
+    aliases.push_back("demonstrate operator overloading");
 }
 
 void OperatorOverloadCommand::run()
