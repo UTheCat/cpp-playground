@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.0.0)
 project(cpp-stuff VERSION 0.1.0 LANGUAGES C CXX)
 
 file (GLOB SOURCES
+src/main/*.hpp
+src/main/*.cpp
 src/main/console/*.hpp
 src/main/console/*.cpp
 )
