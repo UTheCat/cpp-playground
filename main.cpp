@@ -27,8 +27,8 @@ int main(int, char**)
     help_command.group = &command_group;
     commands->push_back(&help_command);
 
-    VeryBasicVector2 first_vec = VeryBasicVector2(3.5, 6.8);
-    VeryBasicVector2 second_vec = VeryBasicVector2(45.9, 17.2);
+    VeryBasicVector2 first_vec = VeryBasicVector2((float)3.5, (float)6.8);
+    VeryBasicVector2 second_vec = VeryBasicVector2((float)45.9, (float)17.2);
     OperatorOverloadCommand operator_overload_command = OperatorOverloadCommand(
         &first_vec, &second_vec
     );
