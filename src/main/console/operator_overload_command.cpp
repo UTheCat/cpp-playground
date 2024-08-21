@@ -17,9 +17,8 @@ void OperatorOverloadCommand::run()
     cout << first_vector->x;
     cout << ", ";
     cout << first_vector->y;
-    cout << ").";
-
-    cout << "second_vector is set to (";
+    cout << ").\nsecond_vector is set to (";
+    
     cout << second_vector->x;
     cout << ", ";
     cout << second_vector->y;
