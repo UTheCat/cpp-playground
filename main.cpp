@@ -5,7 +5,10 @@
 #include "src/main/console/console_command_group.hpp"
 #include "src/main/console/exit_command.hpp"
 #include "src/main/console/help_command.hpp"
+#include "src/main/console/operator_overload_command.hpp"
 #include "src/main/console/pointer_command.hpp"
+#include "src/main/very_basic_vector2.hpp";
+
 using namespace std;
 using namespace CppStuff;
 
@@ -23,6 +26,11 @@ int main(int, char**)
     HelpCommand help_command = HelpCommand();
     help_command.group = &command_group;
     commands->push_back(&help_command);
+
+    OperatorOverloadCommand operator_overload_command = OperatorOverloadCommand(
+        &VeryBasicVector2(3.5, 6.8), &VeryBasicVector2(45.9, 17.2)
+    );
+    commands->push_back(&operator_overload_command);
 
     bool should_exit = false;
     ExitCommand exit_command = ExitCommand();
