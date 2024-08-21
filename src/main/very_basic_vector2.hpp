@@ -15,6 +15,8 @@ namespace CppStuff
 
         VeryBasicVector2();
         VeryBasicVector2(float x, float y);
+
+        VeryBasicVector2 operator+(VeryBasicVector2* other);
     };
 }
 
