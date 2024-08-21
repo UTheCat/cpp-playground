@@ -10,11 +10,11 @@ namespace CppStuff
     class VeryBasicVector2
     {
         public:
-        int x;
-        int y;
+        float x;
+        float y;
 
         VeryBasicVector2();
-        VeryBasicVector2(int x, int y);
+        VeryBasicVector2(float x, float y);
     };
 }
 
