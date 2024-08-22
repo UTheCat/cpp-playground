@@ -41,7 +41,8 @@ int main(int, char**)
         printf("\nWhat would you like to do? (If you would like to exit the program, type 'exit'.)\n");
         
         string action;
-        cin >> action;
+        //cin >> action;
+        getline(cin, action);
 
         // Insert newline so it's more clear which lines contain user input
         cout << "\n";
