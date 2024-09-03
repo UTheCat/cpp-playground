@@ -9,16 +9,15 @@
 #include "src/main/console/pointer_command.hpp"
 #include "src/main/very_basic_vector2.hpp"
 
-using namespace std;
 using namespace CppStuff;
 
 int main(int, char**)
 {
     printf("Hello, from cpp-stuff!\n");
-    cout << "This is another message." << endl;
+    std::cout << "This is another message." << std::endl;
 
     ConsoleCommandGroup command_group = ConsoleCommandGroup();
-    vector<ConsoleCommand*>* commands = command_group.commands;
+    std::vector<ConsoleCommand*>* commands = command_group.commands;
 
     PointerCommand pointer_command = PointerCommand();
     commands->push_back(&pointer_command);
@@ -40,12 +39,12 @@ int main(int, char**)
     {
         printf("\nWhat would you like to do? (If you would like to exit the program, type 'exit'.)\n");
         
-        string action;
+        std::string action;
         //cin >> action;
-        getline(cin, action);
+        std::getline(cin, action);
 
         // Insert newline so it's more clear which lines contain user input
-        cout << "\n";
+        std::cout << "\n";
 
         if (exit_command.has_keyword(action))
         {
