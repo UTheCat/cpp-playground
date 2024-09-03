@@ -8,7 +8,7 @@ HelpCommand::HelpCommand()
 
 void HelpCommand::run()
 {
-    vector<ConsoleCommand*>* commands = &group->commands;
+    vector<ConsoleCommand*>* commands = group->commands;
 
     cout << "Current list of commands has ";
     cout << to_string(commands->size());
