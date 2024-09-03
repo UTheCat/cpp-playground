@@ -18,7 +18,7 @@ int main(int, char**)
     cout << "This is another message." << endl;
 
     ConsoleCommandGroup command_group = ConsoleCommandGroup();
-    vector<ConsoleCommand*>* commands = &command_group.commands;
+    vector<ConsoleCommand*>* commands = command_group.commands;
 
     PointerCommand pointer_command = PointerCommand();
     commands->push_back(&pointer_command);
