@@ -13,11 +13,12 @@ namespace CppStuff
     class ConsoleCommandGroup
     {
         public:
-        vector<ConsoleCommand*> commands;
+        vector<ConsoleCommand*>* commands;
 
         void run_command(string keyword);
 
         ConsoleCommandGroup();
+        ~ConsoleCommandGroup();
     };
 }
 
