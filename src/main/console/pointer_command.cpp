@@ -6,8 +6,8 @@ void PointerCommand::run()
 
     int arbitrary_number = 31;
 
-    int * my_pointer;
-    //printf("Created a pointer named", pointer_name, ". Its memory address is", &my_pointer);
+    int *my_pointer;
+    // printf("Created a pointer named", pointer_name, ". Its memory address is", &my_pointer);
     printf(string("Created a pointer named ").append(pointer_name).append(string(". Its memory address is ")).c_str());
     cout << my_pointer;
     cout << "\nThis pointer is currently uninitialized so the memory address stored in it is kinda random.\n";
@@ -22,6 +22,10 @@ void PointerCommand::run()
     cout << "The value stored at the address stored by my_pointer is now ";
     cout << to_string(arbitrary_number);
     cout << "\n";
+
+    // arbitrary_number in this context is stored on the stack, and will therefore be destroyed once
+    // execution of this function is reached.
+    // Therefore 'delete my_pointer' is unnecessary here.
 }
 
 PointerCommand::PointerCommand()
