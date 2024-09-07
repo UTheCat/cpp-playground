@@ -23,6 +23,12 @@ namespace CppStuff
         LinkedListNode<T> *first_item;
 
         /**
+         * @brief Destroys the nodes that were created in the vector-based constructor
+         * 
+         */
+        void destroy_nodes_from_vector();
+
+        /**
          * @brief Constructs a new LinkedListBuilder initialized with items from a vector.
          *
          * "initial_items" is prefixed with an ampersand (&) here.
@@ -35,7 +41,15 @@ namespace CppStuff
         LinkedListBuilder(std::vector<T> &initial_items);
 
         private:
-        std::array<LinkedListNode<T>*> items_from_vector;
+        /**
+         * @brief Nodes that come from the vector-based constructor.
+         * 
+         * These are stored here because the nodes created in the vector-based constructor
+         * are stored on the heap, and so, there has to be some way to destroy the nodes
+         * to prevent memory leaks.
+         * 
+         */
+        std::array<LinkedListNode<T>*> nodes_from_vector;
     };
 }
 
