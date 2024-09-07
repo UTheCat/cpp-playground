@@ -42,7 +42,7 @@ namespace CppStuff
 
         private:
         /**
-         * @brief Nodes that come from the vector-based constructor.
+         * @brief Pointers to nodes that come from the vector-based constructor.
          * 
          * These are stored here because the nodes created in the vector-based constructor
          * are stored on the heap, and so, there has to be some way to destroy the nodes

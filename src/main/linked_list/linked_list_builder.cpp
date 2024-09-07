@@ -19,6 +19,7 @@ LinkedListBuilder<T>::LinkedListBuilder(std::vector<T> &initial_items)
     for (std::size_t i = initial_items.size() - 1; i >= 0; --i)
     {
         LinkedListNode<T> * node = new LinkedListNode<T>(initial_items[i], most_recent_next_item);
+        nodes_from_vector[i] = node;
 
         if (i == 0)
         {
