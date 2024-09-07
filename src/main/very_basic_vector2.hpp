@@ -14,12 +14,19 @@ namespace CppStuff
         float y;
 
         /**
-         * @brief Default constructor
+         * @brief Default constructor.
          * 
-         * @param x 
-         * @param y 
+         * @param x The x-value of the vector (zero by default).
+         * @param y The y-value of the vector (zero by default).
          */
         VeryBasicVector2(float x = 0.0F, float y = 0.0F);
+
+        /**
+         * @brief Copy constructor.
+         * 
+         * @param other The VeryBasicVector2 to copy.
+         */
+        VeryBasicVector2(const VeryBasicVector2 &other);
 
         VeryBasicVector2 operator+(VeryBasicVector2 &other);
     };
