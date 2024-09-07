@@ -23,12 +23,6 @@ namespace CppStuff
         LinkedListNode<T> *first_item;
 
         /**
-         * @brief Destroys the nodes that were created in the vector-based constructor
-         * 
-         */
-        void destroy_nodes_from_vector();
-
-        /**
          * @brief Constructs a new LinkedListBuilder initialized with items from a vector.
          *
          * "initial_items" is prefixed with an ampersand (&) here.
@@ -39,6 +33,12 @@ namespace CppStuff
          * @param initial_items The vector to get the items from
          */
         LinkedListBuilder(std::vector<T> &initial_items);
+
+        /**
+         * @brief Destroys the nodes that were created in the vector-based constructor
+         * 
+         */
+        void destroy_nodes_from_vector();
 
         private:
         /**
