@@ -13,8 +13,13 @@ namespace CppStuff
         float x;
         float y;
 
-        VeryBasicVector2();
-        VeryBasicVector2(float x, float y);
+        /**
+         * @brief Default constructor
+         * 
+         * @param x 
+         * @param y 
+         */
+        VeryBasicVector2(float x = 0.0F, float y = 0.0F);
 
         VeryBasicVector2 operator+(VeryBasicVector2 &other);
     };

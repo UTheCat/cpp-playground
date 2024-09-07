@@ -2,10 +2,14 @@
 
 using namespace CppStuff;
 
-VeryBasicVector2::VeryBasicVector2() : VeryBasicVector2((float)0, (float)0) {}
-
 VeryBasicVector2::VeryBasicVector2(float x, float y)
 {
+    /*
+    These two lines assign an r-value to an l-value.
+
+    In a line of code such as 'int x = 52', 'x' is the l-value
+    and '52' is the r-value.
+    */
     this->x = x;
     this->y = y;
 }
