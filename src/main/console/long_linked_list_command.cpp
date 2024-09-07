@@ -20,3 +20,19 @@ LongLinkedListCommand::LongLinkedListCommand(std::size_t num_items)
         }
     }
 }
+
+LongLinkedListCommand::~LongLinkedListCommand()
+{
+    // We'll need to call delete on both the nodes in the linked list
+    // and the VeryBasicVector2 instances as both groups of objects
+    // are stored on the heap.
+    LinkedListNode<VeryBasicVector2*> * next_item = first_item;
+    while (next_item != nullptr)
+    {
+        LinkedListNode<VeryBasicVector2*> * current_item = next_item;
+        next_item = current_item->next_item;
+
+        delete current_item->val;
+        delete current_item;
+    }
+}
