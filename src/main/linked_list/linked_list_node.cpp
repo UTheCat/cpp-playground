@@ -2,13 +2,15 @@
 
 using namespace CppStuff;
 
-LinkedListNode::LinkedListNode()
+template <typename T>
+LinkedListNode<T>::LinkedListNode()
 {
-    val = 0.0;
+    val = default;
     next_item = nullptr;
 }
 
-LinkedListNode::LinkedListNode(double init_value, LinkedListNode* init_next_item)
+template <typename T>
+LinkedListNode<T>::LinkedListNode(T init_value, LinkedListNode<T>* init_next_item)
 {
     val = init_value;
     next_item = init_next_item;

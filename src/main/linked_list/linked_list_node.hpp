@@ -9,6 +9,7 @@ namespace CppStuff
      * @brief A linked list node, containing some data and a pointer to the next item in the list
      * 
      */
+    template <typename T>
     class LinkedListNode
     {
         public:
@@ -17,16 +18,16 @@ namespace CppStuff
          * @brief Value/data held by this node
          * 
          */
-        double val;
+        T val;
 
         /**
          * @brief Pointer to the next item
          * 
          */
-        LinkedListNode* next_item;
+        LinkedListNode<T> * next_item;
 
         LinkedListNode();
-        LinkedListNode(double init_value, LinkedListNode* init_next_item);
+        LinkedListNode(T init_value, LinkedListNode<T> * init_next_item);
     };
 }
 
