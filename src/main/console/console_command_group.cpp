@@ -2,7 +2,7 @@
 
 void ConsoleCommandGroup::run_command(string keyword)
 {
-    for (int i = 0; i < commands->size(); i++)
+    for (std::size_t i = 0; i < commands->size(); i++)
     {
         ConsoleCommand* command = commands->at(i);
         if (command->has_keyword(keyword))
