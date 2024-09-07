@@ -11,7 +11,7 @@ namespace CppStuff
      * @brief Class that does some performance tests using very long linked lists
      * 
      */
-    class LongLinkedListCommand : ConsoleCommand
+    class LongLinkedListCommand : public ConsoleCommand
     {
         public:
 
