@@ -27,3 +27,12 @@ LinkedListBuilder<T>::LinkedListBuilder(std::vector<T> &initial_items)
         }
     }
 }
+
+template <typename T>
+void LinkedListBuilder<T>::destroy_nodes_from_vector()
+{
+    /*
+    delete[] (with the square brackets intentionally included) calls the delete operator on all the items in the array/list.
+    */
+    delete[] nodes_from_vector;
+}
