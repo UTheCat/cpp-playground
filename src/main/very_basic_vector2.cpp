@@ -17,6 +17,12 @@ VeryBasicVector2::VeryBasicVector2(float x, float y)
 
 VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 & other)
 {
+    /*
+    Both of these lines are copying data.
+
+    x is receiving a copy of the float stored at other.x
+    y is receiving a copy of the float stored at other.y
+    */
     x = other.x;
     y = other.y;
 }
