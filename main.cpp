@@ -5,6 +5,7 @@
 #include "src/main/console/console_command_group.hpp"
 #include "src/main/console/exit_command.hpp"
 #include "src/main/console/help_command.hpp"
+#include "src/main/console/long_linked_list_command.hpp"
 #include "src/main/console/operator_overload_command.hpp"
 #include "src/main/console/pointer_command.hpp"
 #include "src/main/very_basic_vector2.hpp"
@@ -32,6 +33,9 @@ int main(int, char**)
         &first_vec, &second_vec
     );
     commands->push_back(&operator_overload_command);
+
+    LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(4600);
+    commands->push_back(&long_linked_list_command);
 
     bool should_exit = false;
     ExitCommand exit_command = ExitCommand();
