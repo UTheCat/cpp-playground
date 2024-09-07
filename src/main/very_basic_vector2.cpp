@@ -1,4 +1,5 @@
 #include "very_basic_vector2.hpp"
+#include <utility>
 
 using namespace CppStuff;
 
@@ -14,10 +15,16 @@ VeryBasicVector2::VeryBasicVector2(float x, float y)
     this->y = y;
 }
 
-VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 &other)
+VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 & other)
 {
     x = other.x;
     y = other.y;
+}
+
+VeryBasicVector2::VeryBasicVector2(VeryBasicVector2 && other)
+{
+    x = std::move(other.x);
+    y = std::move(other.y);
 }
 
 VeryBasicVector2 VeryBasicVector2::operator+(VeryBasicVector2 &other)
