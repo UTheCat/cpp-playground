@@ -1,5 +1,5 @@
 #include "console_command.hpp"
-#include "linked_list_builder.hpp"
+#include "linked_list_node.hpp"
 #include "very_basic_vector2.hpp"
 
 #ifndef LONG_LINKED_LIST_COMMAND_H
@@ -19,7 +19,7 @@ namespace CppStuff
          * @brief Default constructor.
          * 
          */
-        LongLinkedListCommand();
+        LongLinkedListCommand(std::size_t num_items);
         
         /**
          * @brief Destructor (there can only be one of these per class).
@@ -30,7 +30,9 @@ namespace CppStuff
         void run() override;
 
         private:
-        LinkedListBuilder<VeryBasicVector2> linked_list_builder;
+        // Consider using LinkedListBuilder once it's more finished
+        LinkedListNode<VeryBasicVector2*> * first_item;
+        std::size_t num_items;
     };
 }
 
