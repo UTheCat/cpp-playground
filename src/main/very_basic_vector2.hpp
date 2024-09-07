@@ -29,9 +29,9 @@ namespace CppStuff
         VeryBasicVector2(const VeryBasicVector2 & other);
 
         /**
-         * @brief Move constructor. Double ampersand to the left of the parameter named 'other' indicates that an r-value should be passed.
+         * @brief Move constructor. Double ampersand to the left of the parameter named 'other' indicates that an r-value reference should be passed.
          *
-         * @param other
+         * @param other The VeryBasicVector2 to take ownership of
          */
         VeryBasicVector2(VeryBasicVector2 && other);
 
