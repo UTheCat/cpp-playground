@@ -3,16 +3,6 @@
 
 using namespace CppStuff;
 
-/**
- * @brief Constructs a new LinkedListBuilder initialized with items from a vector.
- * 
- * In the corresponding header file, "initial_items" is prefixed with an ampersand (&).
- * Adding an ampersand (&) in front of the parameter name
- * specifies that a *reference* to some value should be passed.
- * 
- * @tparam T The type of the linked list's items
- * @param initial_items The vector to get the items from
- */
 template <typename T>
 LinkedListBuilder<T>::LinkedListBuilder(std::vector<T> &initial_items)
 {
