@@ -29,6 +29,7 @@ VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 &other)
 
 VeryBasicVector2::VeryBasicVector2(VeryBasicVector2 &&other)
 {
+    // This is not how it should work
     x = std::move(other.x);
     y = std::move(other.y);
 }
@@ -46,4 +47,6 @@ VeryBasicVector2 &VeryBasicVector2::operator=(VeryBasicVector2 &&other)
         // If they are the same object, simply return this instance as an l-value reference
         return *this;
     }
+
+    // continue from here
 }
