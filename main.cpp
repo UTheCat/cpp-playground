@@ -26,6 +26,14 @@ int main(int, char**)
     cout << to_string(example_c_array[12]);
     cout << "\n";
 
+    float example_float = 2.4F;
+    float & l_value_reference_to_example_float = example_float;
+    l_value_reference_to_example_float = 73.2F;
+
+    cout << "Value of example_float is currently ";
+    cout << to_string(example_float);
+    cout << "\n";
+
     PointerCommand pointer_command = PointerCommand();
     commands->push_back(&pointer_command);
 
