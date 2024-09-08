@@ -1,6 +1,6 @@
 #include "console_command.hpp"
-#include "linked_list_node.hpp"
-#include "very_basic_vector2.hpp"
+#include "../linked_list/linked_list_node.hpp"
+#include "../very_basic_vector2.hpp"
 
 #ifndef LONG_LINKED_LIST_COMMAND_H
 #define LONG_LINKED_LIST_COMMAND_H

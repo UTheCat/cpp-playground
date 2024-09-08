@@ -1,8 +1,12 @@
+#include <chrono>
+#include <string>
 #include "long_linked_list_command.hpp"
 
 LongLinkedListCommand::LongLinkedListCommand(std::size_t num_items)
 {
     this->num_items = num_items;
+    keyword = "long linked list";
+    aliases.push_back("do something with a very long linked list");
 
     LinkedListNode<VeryBasicVector2*> * next_item = nullptr;
     for (std::size_t i = num_items - 1; i >= 0; --num_items)
@@ -35,4 +39,41 @@ LongLinkedListCommand::~LongLinkedListCommand()
         delete current_item->val;
         delete current_item;
     }
+}
+
+void LongLinkedListCommand::run()
+{
+    /*
+    'auto' keyword tells the compiler to guess what the type of this object actually is
+
+    In this case, the type should be std::chrono::time_point<std::chrono::steady_clock>,
+    according to https://en.cppreference.com/w/cpp/chrono/steady_clock/now .
+    */
+    auto start_time = std::chrono::steady_clock::now();
+
+    VeryBasicVector2 total = VeryBasicVector2();
+    LinkedListNode<VeryBasicVector2*> * next_item = first_item;
+    while (next_item != nullptr)
+    {
+        /*
+        convert to l-value reference to use the data pointed to by next_item->val
+
+        Here, we're assigning an l-value to an l-value, which should be valid C++.
+        */
+        VeryBasicVector2 current_vector = (VeryBasicVector2&)(next_item->val);
+
+        // TO-DO: Make a move assignment operator for VeryBasicVector2
+        total = total + current_vector;
+    }
+
+    auto end_time = std::chrono::steady_clock::now();
+    std::chrono::duration<double> duration = end_time - start_time;
+
+    std::cout << "The sum of this LongLinkedListCommand instance's ";
+    std::cout << to_string(num_items);
+    std::cout << " is ";
+
+    
+
+
 }
