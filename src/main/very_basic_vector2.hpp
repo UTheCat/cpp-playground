@@ -26,16 +26,40 @@ namespace CppStuff
          *
          * @param other The VeryBasicVector2 to copy.
          */
-        VeryBasicVector2(const VeryBasicVector2 & other);
+        VeryBasicVector2(const VeryBasicVector2 &other);
 
         /**
          * @brief Move constructor. Double ampersand to the left of the parameter named 'other' indicates that an r-value reference should be passed.
          *
          * @param other The VeryBasicVector2 to take ownership of
          */
-        VeryBasicVector2(VeryBasicVector2 && other);
+        VeryBasicVector2(VeryBasicVector2 &&other);
 
-        VeryBasicVector2 operator+(VeryBasicVector2 & other);
+        /**
+         * @brief Move assignment operator.
+         * 
+         * Ampersand to the right of the first 'VeryBasicVector2' in the method header indicates that a reference to a VeryBasicVector2 should be returned.
+         * 
+         * @param other 
+         * @return VeryBasicVector2 & 
+         */
+        VeryBasicVector2 & operator=(VeryBasicVector2 &&other)
+        {
+            // Make sure the r-value reference supplied and the current instance aren't the same object before continuing
+            if (&other == this)
+            {
+                // If they are the same object, simply return this instance as an l-value reference
+                return *this;
+            }
+        }
+
+        /**
+         * @brief Addition operator overload.
+         *
+         * @param other
+         * @return VeryBasicVector2
+         */
+        VeryBasicVector2 operator+(VeryBasicVector2 &other);
     };
 }
 

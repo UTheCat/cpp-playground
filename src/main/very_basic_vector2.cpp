@@ -37,3 +37,5 @@ VeryBasicVector2 VeryBasicVector2::operator+(VeryBasicVector2 &other)
 {
     return VeryBasicVector2(x + other.x, y + other.y);
 }
+
+VeryBasicVector2 & VeryBasicVector2::operator=()
