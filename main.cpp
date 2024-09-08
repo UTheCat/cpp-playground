@@ -20,6 +20,12 @@ int main(int, char**)
     ConsoleCommandGroup command_group = ConsoleCommandGroup();
     std::vector<ConsoleCommand*>* commands = command_group.commands;
 
+    // Initialize a native, C-style array of ints with the initial value of the ints being 0
+    int example_c_array[25] = {0};
+    cout << "Value of int stored at index 12 of example_c_array is ";
+    cout << to_string(example_c_array[12]);
+    cout << "\n";
+
     PointerCommand pointer_command = PointerCommand();
     commands->push_back(&pointer_command);
 
@@ -34,8 +40,8 @@ int main(int, char**)
     );
     commands->push_back(&operator_overload_command);
 
-    LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(4600);
-    commands->push_back(&long_linked_list_command);
+    //LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(4600);
+    //commands->push_back(&long_linked_list_command);
 
     bool should_exit = false;
     ExitCommand exit_command = ExitCommand();
