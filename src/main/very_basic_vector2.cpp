@@ -15,7 +15,7 @@ VeryBasicVector2::VeryBasicVector2(float x, float y)
     this->y = y;
 }
 
-VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 & other)
+VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 &other)
 {
     /*
     Both of these lines are copying data.
@@ -27,7 +27,7 @@ VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 & other)
     y = other.y;
 }
 
-VeryBasicVector2::VeryBasicVector2(VeryBasicVector2 && other)
+VeryBasicVector2::VeryBasicVector2(VeryBasicVector2 &&other)
 {
     x = std::move(other.x);
     y = std::move(other.y);
@@ -38,4 +38,12 @@ VeryBasicVector2 VeryBasicVector2::operator+(VeryBasicVector2 &other)
     return VeryBasicVector2(x + other.x, y + other.y);
 }
 
-VeryBasicVector2 & VeryBasicVector2::operator=()
+VeryBasicVector2 &VeryBasicVector2::operator=(VeryBasicVector2 &&other)
+{
+    // Make sure the r-value reference supplied and the current instance aren't the same object before continuing
+    if (&other == this)
+    {
+        // If they are the same object, simply return this instance as an l-value reference
+        return *this;
+    }
+}
