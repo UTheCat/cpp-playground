@@ -8,10 +8,12 @@ src/main/console/*.hpp
 src/main/console/*.cpp
 )
 
-# Set C++ standard
-set_property(GLOBAL PROPERTY CXX_STANDARD 23)
+add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
 
-add_executable(cpp-stuff main.cpp ${SOURCES})
+# Set C++ standard
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 23)
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_23)
 
 include(CTest)
 enable_testing()
