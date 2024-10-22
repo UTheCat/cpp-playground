@@ -18,6 +18,7 @@ void PointerCommand::run()
     cout << "\n";
 
     // Store something at the memory address currently held by my_pointer
+    // This works because dereferencing a pointer returns an l-value reference to the object that the pointer is pointing to.
     *my_pointer = 38;
     cout << "The value stored at the address stored by my_pointer is now ";
     cout << to_string(arbitrary_number);
