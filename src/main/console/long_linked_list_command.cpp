@@ -60,7 +60,7 @@ void LongLinkedListCommand::run()
 
         Here, we're assigning an l-value to an l-value, which should be valid C++.
         */
-        VeryBasicVector2 current_vector = (VeryBasicVector2&)(next_item->val);
+        VeryBasicVector2 current_vector = *(next_item->val);
 
         // TO-DO: Make a move assignment operator for VeryBasicVector2
         total = total + current_vector;
