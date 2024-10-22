@@ -1,7 +1,7 @@
 #ifndef VERY_BASIC_VECTOR2_H
 #define VERY_BASIC_VECTOR2_H
 
-#include <ostream>
+#include <iostream>
 
 namespace CppStuff
 {
@@ -11,6 +11,12 @@ namespace CppStuff
      */
     class VeryBasicVector2
     {
+        /// @brief Insertion operator.
+        /// @param stream The stream to insert into.
+        /// @param vector2 The VeryBasicVector2 whose contents should be written to the stream.
+        /// @return A reference to the stream passed in the first parameter.
+        friend std::ostream & operator<<(std::ostream & stream, VeryBasicVector2 const & vector2);
+
     public:
         float x;
         float y;
@@ -54,12 +60,6 @@ namespace CppStuff
          * @return VeryBasicVector2
          */
         VeryBasicVector2 operator+(const VeryBasicVector2 &other);
-        
-        /// @brief Insertion operator.
-        /// @param stream The stream to insert into.
-        /// @param vector2 The VeryBasicVector2 whose contents should be written to the stream.
-        /// @return A reference to the stream passed in the first parameter.
-        friend std::ostream & operator<<(std::ostream stream, VeryBasicVector2 const & vector2);
     };
 }
 

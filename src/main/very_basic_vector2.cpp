@@ -1,5 +1,6 @@
-#include "very_basic_vector2.hpp"
+#include <iostream>
 #include <utility>
+#include "very_basic_vector2.hpp"
 
 using namespace CppStuff;
 
@@ -38,7 +39,7 @@ VeryBasicVector2 VeryBasicVector2::operator+(const VeryBasicVector2 &other)
     return VeryBasicVector2(x + other.x, y + other.y);
 }
 
-VeryBasicVector2 &VeryBasicVector2::operator=(VeryBasicVector2 &&other)
+VeryBasicVector2 & VeryBasicVector2::operator=(VeryBasicVector2 &&other)
 {
     // Make sure the r-value reference supplied and the current instance aren't the same object before continuing
     if (&other != this)
@@ -48,4 +49,11 @@ VeryBasicVector2 &VeryBasicVector2::operator=(VeryBasicVector2 &&other)
     }
 
     return * this;
+}
+
+std::ostream & CppStuff::operator<<(std::ostream & stream, VeryBasicVector2 const & vector2)
+{
+    stream << "(" << vector2.x << ", " << vector2.y << ")";
+
+    return stream;
 }
