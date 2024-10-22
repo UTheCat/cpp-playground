@@ -25,7 +25,8 @@ void PointerCommand::run()
     cout << "\n";
 
     // arbitrary_number in this context is stored on the stack, and will therefore be destroyed once
-    // execution of this function is reached.
+    // execution of this function reaches the end.
+    // In the code, the end of this function is the closing curly brace of this function.
     // Therefore 'delete my_pointer' is unnecessary here.
 }
 
