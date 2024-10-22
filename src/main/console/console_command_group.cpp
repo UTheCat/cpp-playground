@@ -21,13 +21,7 @@ void ConsoleCommandGroup::run_command(string keyword)
     }
 }
 
-ConsoleCommandGroup::ConsoleCommandGroup()
-{
-    // Allocate a new vector onto the heap,
-    // and store its memory address
-    // in the commands variable.
-    commands = new vector<ConsoleCommand*>();
-}
+ConsoleCommandGroup::ConsoleCommandGroup() = default;
 
 ConsoleCommandGroup::~ConsoleCommandGroup()
 {
