@@ -48,10 +48,10 @@ namespace CppStuff
         /**
          * @brief Addition operator overload.
          *
-         * @param other
+         * @param other Can be an l-value or an r-value
          * @return VeryBasicVector2
          */
-        VeryBasicVector2 operator+(VeryBasicVector2 &other);
+        VeryBasicVector2 operator+(const VeryBasicVector2 &other);
     };
 }
 

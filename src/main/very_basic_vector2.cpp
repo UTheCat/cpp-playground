@@ -33,7 +33,7 @@ VeryBasicVector2::VeryBasicVector2(VeryBasicVector2 &&other)
     y = std::move(other.y);
 }
 
-VeryBasicVector2 VeryBasicVector2::operator+(VeryBasicVector2 &other)
+VeryBasicVector2 VeryBasicVector2::operator+(const VeryBasicVector2 &other)
 {
     return VeryBasicVector2(x + other.x, y + other.y);
 }
