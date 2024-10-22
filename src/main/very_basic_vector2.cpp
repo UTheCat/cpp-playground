@@ -41,11 +41,11 @@ VeryBasicVector2 VeryBasicVector2::operator+(const VeryBasicVector2 &other)
 VeryBasicVector2 &VeryBasicVector2::operator=(VeryBasicVector2 &&other)
 {
     // Make sure the r-value reference supplied and the current instance aren't the same object before continuing
-    if (&other == this)
+    if (&other != this)
     {
-        // If they are the same object, simply return this instance as an l-value reference
-        return *this;
+        x = std::move(other.x);
+        y = std::move(other.y);
     }
 
-    // continue from here
+    return * this;
 }
