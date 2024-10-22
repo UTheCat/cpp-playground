@@ -9,7 +9,7 @@ void PointerCommand::run()
     int *my_pointer;
     // printf("Created a pointer named", pointer_name, ". Its memory address is", &my_pointer);
     //printf(string("Created a pointer named ").append(pointer_name).append(string(". Its memory address is ")).c_str());
-    cout << "Created a pointer named" << pointer_name << ". Its memory address is "
+    cout << "Created a pointer named " << pointer_name << ". Its memory address is "
         << my_pointer
         << "\nThis pointer is currently uninitialized so the memory address stored in it is kinda random.\n";
 
