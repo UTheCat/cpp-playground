@@ -29,7 +29,6 @@ VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 &other)
 
 VeryBasicVector2::VeryBasicVector2(VeryBasicVector2 &&other)
 {
-    // This is not how it should work
     x = std::move(other.x);
     y = std::move(other.y);
 }
