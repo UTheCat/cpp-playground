@@ -8,6 +8,11 @@
         "array": "cpp",
         "string_view": "cpp",
         "span": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "cstddef": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "iomanip": "cpp",
+        "system_error": "cpp"
     }
 }
