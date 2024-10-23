@@ -50,10 +50,3 @@ VeryBasicVector2 & VeryBasicVector2::operator=(VeryBasicVector2 &&other)
 
     return * this;
 }
-
-std::ostream & operator<<(std::ostream & stream, VeryBasicVector2 const & vector2)
-{
-    stream << "(" << vector2.x << ", " << vector2.y << ")";
-
-    return stream;
-}

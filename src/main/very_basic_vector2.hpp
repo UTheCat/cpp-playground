@@ -15,7 +15,15 @@ namespace CppStuff
         /// @param stream The stream to insert into.
         /// @param vector2 The VeryBasicVector2 whose contents should be written to the stream.
         /// @return A reference to the stream passed in the first parameter.
-        friend std::ostream & operator<<(std::ostream & stream, VeryBasicVector2 const & vector2);
+        friend std::ostream & operator<<(std::ostream & stream, VeryBasicVector2 const & vector2)
+        {
+            // The implementation of this operator overload is defined here since putting this implementation in
+            // the source/implementation file for VeryBasicVector2 causes a linker error. Not sure why it happens.
+
+            stream << "(" << vector2.x << ", " << vector2.y << ")";
+
+            return stream;
+        }
 
     public:
         float x;
