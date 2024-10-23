@@ -79,8 +79,10 @@ void LongLinkedListCommand::run()
     auto end_time = std::chrono::steady_clock::now();
     std::chrono::duration<double> duration = end_time - start_time;
 
-    std::cout << "The sum of this LongLinkedListCommand instance's "
+    std::cout << "The sum of this LongLinkedListCommand's "
         << num_items
         << " VeryBasicVector2 instances are "
-        << total;
+        << total
+        << "Traversing the linked list stored in this object took "
+        << std::chrono::duration_cast<std::chrono::milliseconds>(duration);
 }
