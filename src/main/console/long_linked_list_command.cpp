@@ -71,6 +71,9 @@ void LongLinkedListCommand::run()
 
         // Add current_vector to total
         total = total + current_vector;
+
+        // Move onto the next element
+        next_item = next_item->next_item;
     }
 
     auto end_time = std::chrono::steady_clock::now();
