@@ -1,3 +1,4 @@
+#include <array>
 #include <vector>
 #include "linked_list_node.hpp"
 
@@ -32,7 +33,7 @@ namespace CppStuff
          * @tparam T The type of the linked list's items
          * @param initial_items The vector to get the items from
          */
-        LinkedListBuilder(std::vector<T> &initial_items);
+        LinkedListBuilder(std::vector<T> initial_items);
 
         /**
          * @brief Destroys the nodes that were created in the vector-based constructor
@@ -49,7 +50,7 @@ namespace CppStuff
          * to prevent memory leaks.
          * 
          */
-        std::array<LinkedListNode<T>*> nodes_from_vector;
+        std::vector<LinkedListNode<T>*> nodes_from_vector;
     };
 }
 

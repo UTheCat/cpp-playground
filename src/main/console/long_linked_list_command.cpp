@@ -3,6 +3,8 @@
 #include <string>
 #include "long_linked_list_command.hpp"
 
+using namespace CppStuff;
+
 LongLinkedListCommand::LongLinkedListCommand(std::size_t num_items)
 {
     this->num_items = num_items;

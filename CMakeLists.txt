@@ -6,6 +6,8 @@ src/main/*.hpp
 src/main/*.cpp
 src/main/console/*.hpp
 src/main/console/*.cpp
+src/main/linked_list/*.hpp
+src/main/linked_list/*.cpp
 )
 
 add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
