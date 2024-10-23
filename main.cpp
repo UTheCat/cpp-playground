@@ -48,8 +48,8 @@ int main(int, char**)
     );
     commands.push_back(&operator_overload_command);
 
-    //LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(4600);
-    //commands->push_back(&long_linked_list_command);
+    LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(50);
+    commands.push_back(&long_linked_list_command);
 
     bool should_exit = false;
     ExitCommand exit_command = ExitCommand();

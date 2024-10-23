@@ -12,7 +12,7 @@ LongLinkedListCommand::LongLinkedListCommand(std::size_t num_items)
     aliases.push_back("do something with a very long linked list");
 
     LinkedListNode<VeryBasicVector2*> * next_item = nullptr;
-    for (std::size_t i = num_items - 1; i >= 0; --num_items)
+    for (std::size_t i = num_items - 1; i >= 0; --i)
     {
         LinkedListNode<VeryBasicVector2*> * node = new LinkedListNode<VeryBasicVector2*>(
             new VeryBasicVector2(
