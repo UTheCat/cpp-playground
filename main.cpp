@@ -55,7 +55,7 @@ int main(int, char**)
     ExitCommand exit_command = ExitCommand();
     while (should_exit == false)
     {
-        printf("\nWhat would you like to do? (If you would like to exit the program, type 'exit'.)\n");
+        printf("\n\nWhat would you like to do? (If you would like to exit the program, type 'exit'.)\n");
         
         std::string action;
         //cin >> action;
