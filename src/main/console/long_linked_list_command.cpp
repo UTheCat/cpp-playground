@@ -84,11 +84,11 @@ void LongLinkedListCommand::run()
         << num_items
         << " VeryBasicVector2 instances are "
         << total
-        << "Traversing the linked list stored in this object took ";
+        << "\nTraversing the linked list stored in this object took ";
 
     if (duration_ms == std::chrono::milliseconds::zero())
     {
-        std::cout << " less than 0";
+        std::cout << "less than 0";
     }
     else
     {
