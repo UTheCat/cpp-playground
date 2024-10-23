@@ -24,6 +24,10 @@ LongLinkedListCommand::LongLinkedListCommand(std::size_t num_items)
         if (i == 0)
         {
             first_item = node;
+
+            // This break statement is necessary because decrementing an unsigned int
+            // below 0 is going to cause the value to wrap around to a very large positive integer.
+            break;
         }
     }
 }
