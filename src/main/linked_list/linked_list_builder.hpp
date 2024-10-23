@@ -1,4 +1,3 @@
-#include <array>
 #include <vector>
 #include "linked_list_node.hpp"
 
