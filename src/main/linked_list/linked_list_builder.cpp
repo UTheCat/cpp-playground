@@ -1,10 +1,12 @@
+#include <vector>
+#include <utility>
 #include "linked_list_builder.hpp"
 #include "linked_list_node.hpp"
 
 using namespace CppStuff;
 
 template <typename T>
-LinkedListBuilder<T>::LinkedListBuilder(std::vector<T> &initial_items)
+LinkedListBuilder<T>::LinkedListBuilder(std::vector<T> initial_items)
 {
     /*
     The previous "next item" pointer.
@@ -14,7 +16,7 @@ LinkedListBuilder<T>::LinkedListBuilder(std::vector<T> &initial_items)
     */
     LinkedListNode<T> * most_recent_next_item = nullptr;
 
-    nodes_from_vector = std::array<LinkedListNode<T>*, initial_items.size()>;
+    nodes_from_vector = {std::move(initial_items)};
 
     for (std::size_t i = initial_items.size() - 1; i >= 0; --i)
     {

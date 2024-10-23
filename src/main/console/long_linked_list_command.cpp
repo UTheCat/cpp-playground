@@ -1,6 +1,9 @@
 #include <chrono>
+#include <iostream>
 #include <string>
 #include "long_linked_list_command.hpp"
+
+using namespace CppStuff;
 
 LongLinkedListCommand::LongLinkedListCommand(std::size_t num_items)
 {
@@ -9,7 +12,7 @@ LongLinkedListCommand::LongLinkedListCommand(std::size_t num_items)
     aliases.push_back("do something with a very long linked list");
 
     LinkedListNode<VeryBasicVector2*> * next_item = nullptr;
-    for (std::size_t i = num_items - 1; i >= 0; --num_items)
+    for (std::size_t i = num_items - 1; i >= 0; --i)
     {
         LinkedListNode<VeryBasicVector2*> * node = new LinkedListNode<VeryBasicVector2*>(
             new VeryBasicVector2(
@@ -21,6 +24,10 @@ LongLinkedListCommand::LongLinkedListCommand(std::size_t num_items)
         if (i == 0)
         {
             first_item = node;
+
+            // This break statement is necessary because decrementing an unsigned int
+            // below 0 is going to cause the value to wrap around to a very large positive integer.
+            break;
         }
     }
 }
@@ -60,20 +67,33 @@ void LongLinkedListCommand::run()
 
         Here, we're assigning an l-value to an l-value, which should be valid C++.
         */
-        VeryBasicVector2 current_vector = (VeryBasicVector2&)(next_item->val);
+        VeryBasicVector2 & current_vector = *(next_item->val);
 
-        // TO-DO: Make a move assignment operator for VeryBasicVector2
+        // Add current_vector to total
         total = total + current_vector;
+
+        // Move onto the next element
+        next_item = next_item->next_item;
     }
 
     auto end_time = std::chrono::steady_clock::now();
     std::chrono::duration<double> duration = end_time - start_time;
+    std::chrono::milliseconds duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(duration);
 
-    std::cout << "The sum of this LongLinkedListCommand instance's ";
-    std::cout << to_string(num_items);
-    std::cout << " is ";
+    std::cout << "The sum of this LongLinkedListCommand's "
+        << num_items
+        << " VeryBasicVector2 instances are "
+        << total
+        << "\nTraversing the linked list stored in this object took ";
 
-    
+    if (duration_ms == std::chrono::milliseconds::zero())
+    {
+        std::cout << "less than 0";
+    }
+    else
+    {
+        std::cout << duration_ms;
+    }
 
-
+    std::cout << " milliseconds.";
 }

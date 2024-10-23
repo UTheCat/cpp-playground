@@ -8,19 +8,19 @@ HelpCommand::HelpCommand()
 
 void HelpCommand::run()
 {
-    vector<ConsoleCommand*>* commands = group->commands;
+    vector<ConsoleCommand*> & commands = group->commands;
 
     cout << "Current list of commands has ";
-    cout << to_string(commands->size());
+    cout << to_string(commands.size());
     cout << " commands.\n";
 
     string output = "List of commands (keyword, aliases):\n";
 
-    for (int i = 0; i < commands->size(); i++)
+    for (int i = 0; i < commands.size(); i++)
     {
         string aliases_output = "";
 
-        ConsoleCommand* command = commands->at(i);
+        ConsoleCommand* command = commands.at(i);
         string command_keyword = command->keyword;
         vector<string>* command_aliases = &command->aliases;
 

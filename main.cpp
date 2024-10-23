@@ -18,7 +18,7 @@ int main(int, char**)
     std::cout << "This is another message." << std::endl;
 
     ConsoleCommandGroup command_group = ConsoleCommandGroup();
-    std::vector<ConsoleCommand*>* commands = command_group.commands;
+    std::vector<ConsoleCommand*> & commands = command_group.commands;
 
     // Initialize a native, C-style array of ints with the initial value of the ints being 0
     int example_c_array[25] = {0};
@@ -35,27 +35,27 @@ int main(int, char**)
     cout << "\n";
 
     PointerCommand pointer_command = PointerCommand();
-    commands->push_back(&pointer_command);
+    commands.push_back(&pointer_command);
 
     HelpCommand help_command = HelpCommand();
     help_command.group = &command_group;
-    commands->push_back(&help_command);
+    commands.push_back(&help_command);
 
     VeryBasicVector2 first_vec = VeryBasicVector2((float)3.5, (float)6.8);
     VeryBasicVector2 second_vec = VeryBasicVector2((float)45.9, (float)17.2);
     OperatorOverloadCommand operator_overload_command = OperatorOverloadCommand(
         &first_vec, &second_vec
     );
-    commands->push_back(&operator_overload_command);
+    commands.push_back(&operator_overload_command);
 
-    //LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(4600);
-    //commands->push_back(&long_linked_list_command);
+    LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(150);
+    commands.push_back(&long_linked_list_command);
 
     bool should_exit = false;
     ExitCommand exit_command = ExitCommand();
     while (should_exit == false)
     {
-        printf("\nWhat would you like to do? (If you would like to exit the program, type 'exit'.)\n");
+        printf("\n\nWhat would you like to do? (If you would like to exit the program, type 'exit'.)\n");
         
         std::string action;
         //cin >> action;

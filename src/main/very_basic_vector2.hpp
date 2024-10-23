@@ -1,6 +1,8 @@
 #ifndef VERY_BASIC_VECTOR2_H
 #define VERY_BASIC_VECTOR2_H
 
+#include <iostream>
+
 namespace CppStuff
 {
     /**
@@ -9,6 +11,20 @@ namespace CppStuff
      */
     class VeryBasicVector2
     {
+        /// @brief Insertion operator.
+        /// @param stream The stream to insert into.
+        /// @param vector2 The VeryBasicVector2 whose contents should be written to the stream.
+        /// @return A reference to the stream passed in the first parameter.
+        friend std::ostream & operator<<(std::ostream & stream, VeryBasicVector2 const & vector2)
+        {
+            // The implementation of this operator overload is defined here since putting this implementation in
+            // the source/implementation file for VeryBasicVector2 causes a linker error. Not sure why it happens.
+
+            stream << "(" << vector2.x << ", " << vector2.y << ")";
+
+            return stream;
+        }
+
     public:
         float x;
         float y;
@@ -48,10 +64,10 @@ namespace CppStuff
         /**
          * @brief Addition operator overload.
          *
-         * @param other
+         * @param other Can be an l-value or an r-value
          * @return VeryBasicVector2
          */
-        VeryBasicVector2 operator+(VeryBasicVector2 &other);
+        VeryBasicVector2 operator+(const VeryBasicVector2 &other);
     };
 }
 

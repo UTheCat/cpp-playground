@@ -1,5 +1,6 @@
-#include "very_basic_vector2.hpp"
+#include <iostream>
 #include <utility>
+#include "very_basic_vector2.hpp"
 
 using namespace CppStuff;
 
@@ -29,24 +30,23 @@ VeryBasicVector2::VeryBasicVector2(const VeryBasicVector2 &other)
 
 VeryBasicVector2::VeryBasicVector2(VeryBasicVector2 &&other)
 {
-    // This is not how it should work
     x = std::move(other.x);
     y = std::move(other.y);
 }
 
-VeryBasicVector2 VeryBasicVector2::operator+(VeryBasicVector2 &other)
+VeryBasicVector2 VeryBasicVector2::operator+(const VeryBasicVector2 &other)
 {
     return VeryBasicVector2(x + other.x, y + other.y);
 }
 
-VeryBasicVector2 &VeryBasicVector2::operator=(VeryBasicVector2 &&other)
+VeryBasicVector2 & VeryBasicVector2::operator=(VeryBasicVector2 &&other)
 {
     // Make sure the r-value reference supplied and the current instance aren't the same object before continuing
-    if (&other == this)
+    if (&other != this)
     {
-        // If they are the same object, simply return this instance as an l-value reference
-        return *this;
+        x = std::move(other.x);
+        y = std::move(other.y);
     }
 
-    // continue from here
+    return * this;
 }
