@@ -48,7 +48,7 @@ int main(int, char**)
     );
     commands.push_back(&operator_overload_command);
 
-    LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(50);
+    LongLinkedListCommand long_linked_list_command = LongLinkedListCommand(150);
     commands.push_back(&long_linked_list_command);
 
     bool should_exit = false;
